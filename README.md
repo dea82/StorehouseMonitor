@@ -6,33 +6,44 @@ TBD
 
 TBD
 
-### Prerequisites
+## Firmware
 
-TBD
+### Prerequisite
 
-### Installing
+Install [Mongoose OS](https://mongoose-os.com/mos.html)
 
-TBD
+For Mac
 
-## Running the tests
+```bash
+brew tap cesanta/mos
+brew install mos
+```
 
-TBD
+### Build firmware
 
-### Break down into end to end tests
+```bash
+mos build --local --verbose --platform esp8266
+```
 
-TBD
+### Flash firmware
 
-### And coding style tests
+```bash
+mos flash
+```
 
-TBD
+### Configure firmware
 
-## Deployment
+Set WiFi
 
-TBD
+```bash
+mos wifi SSID PASSWORD
+```
 
-## Built With
+Connect device to Google Cloud Platform IoT Core
 
-TBD
+```bash
+mos gcp-iot-setup --gcp-project PROJECT --gcp-region REGION --gcp-registry REGISTRY
+```
 
 ## Contributing
 
