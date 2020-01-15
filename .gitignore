@@ -1,0 +1,5 @@
+firmware/build
+firmware/deps
+*.pem
+.DS_Store
+.vscode
