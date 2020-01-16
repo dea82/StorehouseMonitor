@@ -1,0 +1,14 @@
+on: [push, pull_request]
+name: Firmware
+jobs:
+  firmware:
+    runs-on: ubuntu-latest
+    name: Build firmware
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Build
+      uses: dea82/mongoose-os-action@v1.0.1
+      with:
+        mos-yml-path: firmware
+        platform: esp8266
