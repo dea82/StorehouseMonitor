@@ -1,7 +1,7 @@
 on: [push, pull_request]
 name: Backend
 jobs:
-  firmware:
+  linting:
     runs-on: ubuntu-latest
     name: Lint
     steps:
@@ -17,3 +17,21 @@ jobs:
       - name: Lint
         run: npm run lint
         working-directory: ./backend
+  testing:
+    runs-on: ubuntu-latest
+    name: Unit testing
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '13.x'
+      - name: Install dev dependencies
+        run: npm install
+        working-directory: ./backend
+      - name: Unit testing
+        run: npm test
+        working-directory: ./backend
+
+
