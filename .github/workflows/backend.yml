@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: '13.x'
       - name: Install dev dependencies
-        run: npm install
+        run: npm ci
         working-directory: ./backend
       - name: Unit testing
         run: npm test
