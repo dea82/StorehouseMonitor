@@ -3,6 +3,7 @@ const httpStatus = require('http-status');
 
 // import all the routes here
 const samplesRouter = require('./samples.router');
+const nodesRouter = require('./nodes.router');
 
 const router = express.Router();
 
@@ -19,5 +20,6 @@ router.get('/status', (req, res) => {
 });
 
 router.use('/samples', samplesRouter);
+router.use('/nodes', nodesRouter);
 
 module.exports = router;

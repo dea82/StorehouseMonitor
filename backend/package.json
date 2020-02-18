@@ -9,7 +9,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "@google-cloud/firestore": "^3.5.0",
+    "@google-cloud/iot": "^1.7.0",
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-status": "^1.4.2",

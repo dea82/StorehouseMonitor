@@ -1,6 +1,21 @@
-const nodeData = {
-  temperature: 23,
-  humidity: 40,
-};
+const db = require('../db/initalize').getDb();
 
-exports.getSamples = async () => nodeData;
+async function getSamples() {
+  const samples = db
+    .collection('samples')
+    .get()
+    .then((snapshot) => snapshot.docs.map((x) => x.data()));
+
+  return samples;
+}
+
+async function createSample(temperatureValue) {
+  const sampleRef = await db
+    .collection('samples')
+    .add({ temperature: temperatureValue });
+  const sample = await sampleRef.get();
+  return { id: sample.id, data: sample.data() };
+}
+
+module.exports.getSamples = getSamples;
+module.exports.createSample = createSample;
