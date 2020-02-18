@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 
+require('@google-cloud/debug-agent').start();
 const debug = require('debug')('backend:server');
 const http = require('http');
 const app = require('../api/app');

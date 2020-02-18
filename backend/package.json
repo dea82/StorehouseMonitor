@@ -9,6 +9,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@google-cloud/debug-agent": "^4.2.2",
     "@google-cloud/firestore": "^3.5.0",
     "@google-cloud/iot": "^1.7.0",
     "cookie-parser": "~1.4.4",
